@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "/usr/lib64/python3.6/site-packages/scipy/stats/__init__.py", line 345, in <module>
+    from .morestats import *
+  File "/usr/lib64/python3.6/site-packages/scipy/stats/morestats.py", line 12, in <module>
+    from numpy.testing.decorators import setastest
+ModuleNotFoundError: No module named 'numpy.testing.decorators'

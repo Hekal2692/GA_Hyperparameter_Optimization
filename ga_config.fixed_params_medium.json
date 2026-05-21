@@ -1,0 +1,24 @@
+{
+  "scheduler": {
+    "mutation": {
+      "task_order_probability": 0.15,
+      "processor_allocation_probability": 0.15,
+      "message_priority_shuffle_probability": 0.15,
+      "message_path_index_probability": 0.15
+    }
+  },
+  "outer_ga": {
+    "objective_weights": {
+      "mean_makespan": 1.0,
+      "mean_runtime_seconds": 0.0
+    },
+    "evolved_hyperparameters": [
+      "pop_size",
+      "ngen"
+    ]
+  },
+  "static_scheduler_ga": {
+    "cxpb": 0.7,
+    "mutpb": 0.2
+  }
+}

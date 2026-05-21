@@ -1,0 +1,1081 @@
+{
+    "application": {
+	"jobs": [
+	    {
+		"id": 0,
+		"wcet_fullspeed": 94,
+		"mcet": 0,
+ 		"processing_times": 2,
+		"deadline": 467,
+		"can_run_on": [2,4]
+
+	    },
+	    {
+		"id": 1,
+		"wcet_fullspeed": 74,
+		"mcet": 0,
+ 		"processing_times": 3,
+		"deadline": 209,
+		"can_run_on": [8,2,4]
+
+	    },
+	    {
+		"id": 2,
+		"wcet_fullspeed": 44,
+		"mcet": 0,
+ 		"processing_times": 6,
+		"deadline": 532,
+		"can_run_on": [7,4,2]
+
+	    },
+	    {
+		"id": 3,
+		"wcet_fullspeed": 57,
+		"mcet": 0,
+ 		"processing_times": 3,
+		"deadline": 482,
+		"can_run_on": [4,8,5]
+
+	    },
+	    {
+		"id": 4,
+		"wcet_fullspeed": 6,
+		"mcet": 0,
+ 		"processing_times": 3,
+		"deadline": 420,
+		"can_run_on": [2,5,7]
+
+	    },
+	    {
+		"id": 5,
+		"wcet_fullspeed": 53,
+		"mcet": 0,
+ 		"processing_times": 10,
+		"deadline": 251,
+		"can_run_on": [4,8,5]
+
+	    },
+	    {
+		"id": 6,
+		"wcet_fullspeed": 65,
+		"mcet": 0,
+ 		"processing_times": 4,
+		"deadline": 454,
+		"can_run_on": [7,4,1]
+
+	    },
+	    {
+		"id": 7,
+		"wcet_fullspeed": 30,
+		"mcet": 0,
+ 		"processing_times": 7,
+		"deadline": 428,
+		"can_run_on": [4,2,7]
+
+	    },
+	    {
+		"id": 8,
+		"wcet_fullspeed": 84,
+		"mcet": 0,
+ 		"processing_times": 4,
+		"deadline": 119,
+		"can_run_on": [4,8,7,2,5]
+
+	    },
+	    {
+		"id": 9,
+		"wcet_fullspeed": 48,
+		"mcet": 0,
+ 		"processing_times": 8,
+		"deadline": 587,
+		"can_run_on": [2,8,7,1]
+
+	    },
+	    {
+		"id": 10,
+		"wcet_fullspeed": 52,
+		"mcet": 0,
+ 		"processing_times": 4,
+		"deadline": 181,
+		"can_run_on": [5,2,1,8]
+
+	    },
+	    {
+		"id": 11,
+		"wcet_fullspeed": 7,
+		"mcet": 0,
+ 		"processing_times": 9,
+		"deadline": 376,
+		"can_run_on": [7,8,5,1]
+
+	    },
+	    {
+		"id": 12,
+		"wcet_fullspeed": 84,
+		"mcet": 0,
+ 		"processing_times": 8,
+		"deadline": 263,
+		"can_run_on": [4,8,1,5]
+
+	    },
+	    {
+		"id": 13,
+		"wcet_fullspeed": 71,
+		"mcet": 0,
+ 		"processing_times": 5,
+		"deadline": 273,
+		"can_run_on": [4,2,7]
+
+	    },
+	    {
+		"id": 14,
+		"wcet_fullspeed": 48,
+		"mcet": 0,
+ 		"processing_times": 4,
+		"deadline": 261,
+		"can_run_on": [2,8,4]
+
+	    },
+	    {
+		"id": 15,
+		"wcet_fullspeed": 75,
+		"mcet": 0,
+ 		"processing_times": 5,
+		"deadline": 184,
+		"can_run_on": [5,7]
+
+	    },
+	    {
+		"id": 16,
+		"wcet_fullspeed": 69,
+		"mcet": 0,
+ 		"processing_times": 4,
+		"deadline": 153,
+		"can_run_on": [1,5]
+
+	    },
+	    {
+		"id": 17,
+		"wcet_fullspeed": 8,
+		"mcet": 0,
+ 		"processing_times": 3,
+		"deadline": 379,
+		"can_run_on": [1,2,8]
+
+	    },
+	    {
+		"id": 18,
+		"wcet_fullspeed": 63,
+		"mcet": 0,
+ 		"processing_times": 10,
+		"deadline": 493,
+		"can_run_on": [8,2]
+
+	    },
+	    {
+		"id": 19,
+		"wcet_fullspeed": 28,
+		"mcet": 0,
+ 		"processing_times": 2,
+		"deadline": 492,
+		"can_run_on": [2,1,7,5]
+
+	    },
+	    {
+		"id": 20,
+		"wcet_fullspeed": 99,
+		"mcet": 0,
+ 		"processing_times": 9,
+		"deadline": 281,
+		"can_run_on": [1,7,8,4]
+
+	    },
+	    {
+		"id": 21,
+		"wcet_fullspeed": 4,
+		"mcet": 0,
+ 		"processing_times": 3,
+		"deadline": 116,
+		"can_run_on": [4,2]
+
+	    },
+	    {
+		"id": 22,
+		"wcet_fullspeed": 30,
+		"mcet": 0,
+ 		"processing_times": 2,
+		"deadline": 409,
+		"can_run_on": [1,4,7,8]
+
+	    },
+	    {
+		"id": 23,
+		"wcet_fullspeed": 24,
+		"mcet": 0,
+ 		"processing_times": 2,
+		"deadline": 527,
+		"can_run_on": [4,2,1]
+
+	    },
+	    {
+		"id": 24,
+		"wcet_fullspeed": 97,
+		"mcet": 0,
+ 		"processing_times": 2,
+		"deadline": 286,
+		"can_run_on": [5,8,2]
+
+	    },
+	    {
+		"id": 25,
+		"wcet_fullspeed": 86,
+		"mcet": 0,
+ 		"processing_times": 5,
+		"deadline": 374,
+		"can_run_on": [7,8]
+
+	    },
+	    {
+		"id": 26,
+		"wcet_fullspeed": 89,
+		"mcet": 0,
+ 		"processing_times": 9,
+		"deadline": 231,
+		"can_run_on": [8,4,1,5]
+
+	    },
+	    {
+		"id": 27,
+		"wcet_fullspeed": 67,
+		"mcet": 0,
+ 		"processing_times": 3,
+		"deadline": 415,
+		"can_run_on": [4,1,7,5]
+
+	    },
+	    {
+		"id": 28,
+		"wcet_fullspeed": 31,
+		"mcet": 0,
+ 		"processing_times": 2,
+		"deadline": 335,
+		"can_run_on": [8,1]
+
+	    },
+	    {
+		"id": 29,
+		"wcet_fullspeed": 67,
+		"mcet": 0,
+ 		"processing_times": 10,
+		"deadline": 154,
+		"can_run_on": [1,2,8,4]
+
+	    },
+	    {
+		"id": 30,
+		"wcet_fullspeed": 26,
+		"mcet": 0,
+ 		"processing_times": 4,
+		"deadline": 237,
+		"can_run_on": [1,2,8]
+
+	    },
+	    {
+		"id": 31,
+		"wcet_fullspeed": 96,
+		"mcet": 0,
+ 		"processing_times": 4,
+		"deadline": 585,
+		"can_run_on": [7,5,2]
+
+	    },
+	    {
+		"id": 32,
+		"wcet_fullspeed": 12,
+		"mcet": 0,
+ 		"processing_times": 6,
+		"deadline": 574,
+		"can_run_on": [1,8]
+
+	    },
+	    {
+		"id": 33,
+		"wcet_fullspeed": 61,
+		"mcet": 0,
+ 		"processing_times": 5,
+		"deadline": 335,
+		"can_run_on": [4,8,7,1]
+
+	    },
+	    {
+		"id": 34,
+		"wcet_fullspeed": 40,
+		"mcet": 0,
+ 		"processing_times": 3,
+		"deadline": 545,
+		"can_run_on": [4,7]
+
+	    },
+	    {
+		"id": 35,
+		"wcet_fullspeed": 44,
+		"mcet": 0,
+ 		"processing_times": 9,
+		"deadline": 547,
+		"can_run_on": [8,2,5]
+
+	    },
+	    {
+		"id": 36,
+		"wcet_fullspeed": 87,
+		"mcet": 0,
+ 		"processing_times": 7,
+		"deadline": 579,
+		"can_run_on": [4,8,7]
+
+	    },
+	    {
+		"id": 37,
+		"wcet_fullspeed": 42,
+		"mcet": 0,
+ 		"processing_times": 9,
+		"deadline": 117,
+		"can_run_on": [7,4,5]
+
+	    },
+	    {
+		"id": 38,
+		"wcet_fullspeed": 39,
+		"mcet": 0,
+ 		"processing_times": 6,
+		"deadline": 502,
+		"can_run_on": [7,8,2,1,5]
+
+	    },
+	    {
+		"id": 39,
+		"wcet_fullspeed": 12,
+		"mcet": 0,
+ 		"processing_times": 4,
+		"deadline": 533,
+		"can_run_on": [2,4,8]
+
+	    },
+	    {
+		"id": 40,
+		"wcet_fullspeed": 59,
+		"mcet": 0,
+ 		"processing_times": 10,
+		"deadline": 338,
+		"can_run_on": [5,4,2]
+
+	    },
+	    {
+		"id": 41,
+		"wcet_fullspeed": 67,
+		"mcet": 0,
+ 		"processing_times": 8,
+		"deadline": 597,
+		"can_run_on": [7,1,4,8]
+
+	    },
+	    {
+		"id": 42,
+		"wcet_fullspeed": 33,
+		"mcet": 0,
+ 		"processing_times": 2,
+		"deadline": 331,
+		"can_run_on": [8,2,1,7]
+
+	    },
+	    {
+		"id": 43,
+		"wcet_fullspeed": 24,
+		"mcet": 0,
+ 		"processing_times": 8,
+		"deadline": 401,
+		"can_run_on": [8,5]
+
+	    },
+	    {
+		"id": 44,
+		"wcet_fullspeed": 56,
+		"mcet": 0,
+ 		"processing_times": 9,
+		"deadline": 436,
+		"can_run_on": [2,1]
+
+	    },
+	    {
+		"id": 45,
+		"wcet_fullspeed": 63,
+		"mcet": 0,
+ 		"processing_times": 6,
+		"deadline": 316,
+		"can_run_on": [4,1]
+
+	    },
+	    {
+		"id": 46,
+		"wcet_fullspeed": 95,
+		"mcet": 0,
+ 		"processing_times": 8,
+		"deadline": 198,
+		"can_run_on": [5,2,4]
+
+	    },
+	    {
+		"id": 47,
+		"wcet_fullspeed": 10,
+		"mcet": 0,
+ 		"processing_times": 5,
+		"deadline": 527,
+		"can_run_on": [5,1,8]
+
+	    },
+	    {
+		"id": 48,
+		"wcet_fullspeed": 48,
+		"mcet": 0,
+ 		"processing_times": 3,
+		"deadline": 133,
+		"can_run_on": [1,4,7]
+
+	    },
+	    {
+		"id": 49,
+		"wcet_fullspeed": 74,
+		"mcet": 0,
+ 		"processing_times": 4,
+		"deadline": 240,
+		"can_run_on": [1,4]
+
+	    }
+	],
+	"messages": [
+	    {
+		"id": 0,
+		"sender": 1,
+		"receiver": 0,
+		"size": 24,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 1,
+		"sender": 12,
+		"receiver": 8,
+		"size": 15,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 2,
+		"sender": 12,
+		"receiver": 17,
+		"size": 23,
+		"timetriggered": true,
+ 		"period": 50
+	    },
+	    {
+		"id": 3,
+		"sender": 13,
+		"receiver": 9,
+		"size": 21,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 4,
+		"sender": 15,
+		"receiver": 6,
+		"size": 21,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 5,
+		"sender": 17,
+		"receiver": 15,
+		"size": 24,
+		"timetriggered": true,
+ 		"period": 50
+	    },
+	    {
+		"id": 6,
+		"sender": 18,
+		"receiver": 6,
+		"size": 23,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 7,
+		"sender": 19,
+		"receiver": 11,
+		"size": 18,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 8,
+		"sender": 19,
+		"receiver": 22,
+		"size": 22,
+		"timetriggered": true,
+ 		"period": 50
+	    },
+	    {
+		"id": 9,
+		"sender": 20,
+		"receiver": 8,
+		"size": 23,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 10,
+		"sender": 21,
+		"receiver": 5,
+		"size": 24,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 11,
+		"sender": 22,
+		"receiver": 21,
+		"size": 22,
+		"timetriggered": true,
+ 		"period": 50
+	    },
+	    {
+		"id": 12,
+		"sender": 27,
+		"receiver": 9,
+		"size": 22,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 13,
+		"sender": 27,
+		"receiver": 10,
+		"size": 25,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 14,
+		"sender": 27,
+		"receiver": 15,
+		"size": 24,
+		"timetriggered": true,
+ 		"period": 50
+	    },
+	    {
+		"id": 15,
+		"sender": 28,
+		"receiver": 27,
+		"size": 19,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 16,
+		"sender": 28,
+		"receiver": 32,
+		"size": 23,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 17,
+		"sender": 30,
+		"receiver": 7,
+		"size": 22,
+		"timetriggered": true,
+ 		"period": 50
+	    },
+	    {
+		"id": 18,
+		"sender": 30,
+		"receiver": 23,
+		"size": 23,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 19,
+		"sender": 31,
+		"receiver": 5,
+		"size": 21,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 20,
+		"sender": 32,
+		"receiver": 16,
+		"size": 18,
+		"timetriggered": true,
+ 		"period": 50
+	    },
+	    {
+		"id": 21,
+		"sender": 33,
+		"receiver": 7,
+		"size": 24,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 22,
+		"sender": 33,
+		"receiver": 23,
+		"size": 17,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 23,
+		"sender": 33,
+		"receiver": 27,
+		"size": 22,
+		"timetriggered": true,
+ 		"period": 50
+	    },
+	    {
+		"id": 24,
+		"sender": 33,
+		"receiver": 36,
+		"size": 21,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 25,
+		"sender": 34,
+		"receiver": 2,
+		"size": 24,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 26,
+		"sender": 34,
+		"receiver": 3,
+		"size": 19,
+		"timetriggered": true,
+ 		"period": 50
+	    },
+	    {
+		"id": 27,
+		"sender": 34,
+		"receiver": 25,
+		"size": 22,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 28,
+		"sender": 35,
+		"receiver": 8,
+		"size": 24,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 29,
+		"sender": 36,
+		"receiver": 25,
+		"size": 19,
+		"timetriggered": true,
+ 		"period": 50
+	    },
+	    {
+		"id": 30,
+		"sender": 37,
+		"receiver": 18,
+		"size": 21,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 31,
+		"sender": 37,
+		"receiver": 24,
+		"size": 21,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 32,
+		"sender": 37,
+		"receiver": 31,
+		"size": 20,
+		"timetriggered": true,
+ 		"period": 50
+	    },
+	    {
+		"id": 33,
+		"sender": 38,
+		"receiver": 5,
+		"size": 16,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 34,
+		"sender": 38,
+		"receiver": 16,
+		"size": 25,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 35,
+		"sender": 39,
+		"receiver": 26,
+		"size": 24,
+		"timetriggered": true,
+ 		"period": 50
+	    },
+	    {
+		"id": 36,
+		"sender": 39,
+		"receiver": 42,
+		"size": 23,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 37,
+		"sender": 40,
+		"receiver": 34,
+		"size": 22,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 38,
+		"sender": 41,
+		"receiver": 29,
+		"size": 16,
+		"timetriggered": true,
+ 		"period": 50
+	    },
+	    {
+		"id": 39,
+		"sender": 41,
+		"receiver": 37,
+		"size": 19,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 40,
+		"sender": 41,
+		"receiver": 40,
+		"size": 20,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 41,
+		"sender": 42,
+		"receiver": 1,
+		"size": 23,
+		"timetriggered": true,
+ 		"period": 50
+	    },
+	    {
+		"id": 42,
+		"sender": 42,
+		"receiver": 37,
+		"size": 24,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 43,
+		"sender": 42,
+		"receiver": 41,
+		"size": 16,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 44,
+		"sender": 43,
+		"receiver": 0,
+		"size": 22,
+		"timetriggered": true,
+ 		"period": 50
+	    },
+	    {
+		"id": 45,
+		"sender": 43,
+		"receiver": 4,
+		"size": 22,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 46,
+		"sender": 43,
+		"receiver": 14,
+		"size": 18,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 47,
+		"sender": 44,
+		"receiver": 35,
+		"size": 17,
+		"timetriggered": true,
+ 		"period": 50
+	    },
+	    {
+		"id": 48,
+		"sender": 45,
+		"receiver": 7,
+		"size": 16,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 49,
+		"sender": 45,
+		"receiver": 30,
+		"size": 24,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 50,
+		"sender": 46,
+		"receiver": 13,
+		"size": 24,
+		"timetriggered": true,
+ 		"period": 50
+	    },
+	    {
+		"id": 51,
+		"sender": 46,
+		"receiver": 38,
+		"size": 20,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 52,
+		"sender": 47,
+		"receiver": 30,
+		"size": 22,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 53,
+		"sender": 48,
+		"receiver": 9,
+		"size": 24,
+		"timetriggered": true,
+ 		"period": 50
+	    },
+	    {
+		"id": 54,
+		"sender": 48,
+		"receiver": 13,
+		"size": 25,
+		"timetriggered": true,
+ 		"period": 10
+	    },
+	    {
+		"id": 55,
+		"sender": 48,
+		"receiver": 46,
+		"size": 15,
+		"timetriggered": true,
+ 		"period": 30
+	    },
+	    {
+		"id": 56,
+		"sender": 49,
+		"receiver": 20,
+		"size": 23,
+		"timetriggered": true,
+ 		"period": 50
+	    }
+	]
+    },
+	"platform": {
+		"nodes": [
+			{
+				"id": 1,
+				"is_router": false
+			},
+			{
+				"id": 2,
+				"is_router": false
+			},
+			{
+				"id": 3,
+				"is_router": false
+			},
+			{
+				"id": 4,
+				"is_router": true
+			},
+			{
+				"id": 5,
+				"is_router": true
+			},
+			{
+				"id": 6,
+				"is_router": true
+			},
+			{
+				"id": 7,
+				"is_router": false
+			},
+			{
+				"id": 8,
+				"is_router": true
+			},
+			{
+				"id": 9,
+				"is_router": true
+			},
+			{
+				"id": 10,
+				"is_router": true
+			},
+			{
+				"id": 11,
+				"is_router": false
+			},
+			{
+				"id": 12,
+				"is_router": true
+			},
+			{
+				"id": 13,
+				"is_router": true
+			},
+			{
+				"id": 14,
+				"is_router": true
+			},
+			{
+				"id": 15,
+				"is_router": false
+			},
+			{
+				"id": 16,
+				"is_router": false
+			},
+			{
+				"id": 17,
+				"is_router": false
+			}
+		],
+		"links": [
+			{
+				"start": 4,
+				"end": 1
+			},
+			{
+				"start": 5,
+				"end": 2
+			},
+			{
+				"start": 6,
+				"end": 3
+			},
+			{
+				"start": 4,
+				"end": 5
+			},
+			{
+				"start": 4,
+				"end": 8
+			},
+			{
+				"start": 5,
+				"end": 6
+			},
+			{
+				"start": 5,
+				"end": 9
+			},
+			{
+				"start": 6,
+				"end": 10
+			},
+			{
+				"start": 8,
+				"end": 7
+			},
+			{
+				"start": 8,
+				"end": 9
+			},
+			{
+				"start": 9,
+				"end": 10
+			},
+			{
+				"start": 8,
+				"end": 12
+			},
+			{
+				"start": 9,
+				"end": 13
+			},
+			{
+				"start": 10,
+				"end": 14
+			},
+			{
+				"start": 10,
+				"end": 11
+			},
+			{
+				"start": 12,
+				"end": 13
+			},
+			{
+				"start": 13,
+				"end": 14
+			},
+			{
+				"start": 12,
+				"end": 15
+			},
+			{
+				"start": 13,
+				"end": 16
+			},
+			{
+				"start": 14,
+				"end": 17
+			}
+		]
+	},
+		"frequencies": [
+		  500,
+		  1000
+		],
+		"schemes": [
+		  {
+			"id": 0,
+			"wcdt": 0,
+			"wcct": 0,
+			"wccr": 1
+		  }
+		]
+	  }
+	
