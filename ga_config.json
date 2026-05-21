@@ -1,0 +1,98 @@
+{
+  "paths": {
+    "default_input_json": "example_70T.json",
+    "log_dir": "logs"
+  },
+  "problem": {
+    "k_shortest_paths": 4,
+    "self_loop_cost": 1
+  },
+  "scheduler": {
+    "reconstruction": {
+      "fallback_path_id": "290"
+    },
+    "selection": {
+      "tournament_size": 2
+    },
+    "message_path_choices": [0, 1, 2, 3],
+    "mutation": {
+      "task_order_probability": 0.15,
+      "processor_allocation_probability": 0.15,
+      "message_priority_shuffle_probability": 0.15,
+      "message_path_index_probability": 0.15
+    }
+  },
+  "outer_ga": {
+    "population_size": 50,
+    "generations": 20,
+    "crossover_probability": 0.4,
+    "mutation_probability": 0.6,
+    "tournament_size": 2,
+    "elite_count": 1,
+    "random_immigrant_rate": 0.1,
+    "inner_repeats": 3,
+    "random_seed": 3,
+    "show_plot": true,
+    "log_population_details": true,
+    "objective_weights": {
+      "mean_makespan": 1.0,
+      "mean_runtime_seconds": 0.0
+    },
+    "evolved_hyperparameters": [
+      "pop_size",
+      "ngen"
+    ],
+    "computation_budget": {
+      "mode": "exact_product",
+      "budget": 2520
+    }
+  },
+  "static_scheduler_ga": {
+    "pop_size": 40,
+    "cxpb": 0.7,
+    "mutpb": 0.2,
+    "ngen": 75,
+    "benchmark_repeats": 3,
+    "random_seed": 3,
+    "show_plot": false
+  },
+  "analysis": {
+    "top_k_validation_candidates": 3,
+    "validation_repeats": 3,
+    "validation_seed_offset": 100000
+  },
+  "hyperparameter_search_space": {
+    "pop_size": {
+      "min": 20,
+      "max": 60
+    },
+    "cxpb": {
+      "min": 0.5,
+      "max": 0.9
+    },
+    "mutpb": {
+      "min": 0.1,
+      "max": 0.3
+    },
+    "ngen": {
+      "min": 30,
+      "max": 120
+    },
+    "task_order_probability": {
+      "min": 0.0,
+      "max": 0.3
+    },
+    "processor_allocation_probability": {
+      "min": 0.0,
+      "max": 0.3
+    },
+    "message_priority_shuffle_probability": {
+      "min": 0.0,
+      "max": 0.3
+    },
+    "message_path_index_probability": {
+      "min": 0.0,
+      "max": 0.3
+    }
+  }
+}

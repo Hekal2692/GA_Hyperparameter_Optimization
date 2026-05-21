@@ -1,0 +1,76 @@
+{
+  "paths": {
+    "default_input_json": "example_30T.json",
+    "log_dir": "logs"
+  },
+  "outer_ga": {
+    "population_size": 4,
+    "generations": 1,
+    "tournament_size": 3,
+    "elite_count": 1,
+    "random_immigrant_rate": 0.25,
+    "random_seed": 7,
+    "objective_weights": {
+      "mean_makespan": 1.0,
+      "mean_runtime_seconds": 0.0
+    },
+    "evolved_hyperparameters": [
+      "pop_size",
+      "ngen"
+    ]
+  },
+  "static_scheduler_ga": {
+    "cxpb": 0.7,
+    "mutpb": 0.2
+  },
+  "analysis": {
+    "top_k_validation_candidates": 2,
+    "validation_repeats": 3,
+    "validation_seed_offset": 100000
+  },
+  "hyperparameter_search_space": {
+    "pop_size": {
+      "min": 20,
+      "max": 60
+    },
+    "cxpb": {
+      "min": 0.5,
+      "max": 0.9
+    },
+    "mutpb": {
+      "min": 0.1,
+      "max": 0.3
+    },
+    "ngen": {
+      "min": 30,
+      "max": 120
+    },
+    "task_order_probability": {
+      "min": 0.0,
+      "max": 0.3
+    },
+    "processor_allocation_probability": {
+      "min": 0.0,
+      "max": 0.3
+    },
+    "message_priority_shuffle_probability": {
+      "min": 0.0,
+      "max": 0.3
+    },
+    "message_path_index_probability": {
+      "min": 0.0,
+      "max": 0.3
+    }
+  },
+  "scheduler": {
+    "selection": {
+      "tournament_size": 3
+    },
+    "mutation": {
+      "task_order_probability": 0.15,
+      "processor_allocation_probability": 0.15,
+      "message_priority_shuffle_probability": 0.15,
+      "message_path_index_probability": 0.15
+    }
+  }
+}
