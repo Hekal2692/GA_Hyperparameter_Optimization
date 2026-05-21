@@ -1,0 +1,17 @@
+{
+  "paths": {
+    "default_input_json": "example_30T.json",
+    "log_dir": "logs"
+  },
+  "scheduler": {
+    "selection": {
+      "tournament_size": 3
+    }
+  },
+  "static_scheduler_ga": {
+    "pop_size": 8,
+    "ngen": 3,
+    "benchmark_repeats": 2,
+    "random_seed": 7
+  }
+}

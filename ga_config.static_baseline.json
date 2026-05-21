@@ -1,0 +1,26 @@
+{
+  "paths": {
+    "default_input_json": "example_70T.json", 
+    "log_dir": "logs"
+  },
+  "scheduler": {
+    "selection": {
+      "tournament_size": 2
+    },
+    "mutation": {
+      "task_order_probability": 0.05,
+      "processor_allocation_probability": 0.05,
+      "message_priority_shuffle_probability": 0.05,
+      "message_path_index_probability": 0.05
+    }
+  },
+  "static_scheduler_ga": {
+    "pop_size": 40,
+    "cxpb": 0.45,
+    "mutpb": 0.5,
+    "ngen": 75,
+    "benchmark_repeats": 7,
+    "random_seed": 3,
+    "show_plot": true
+  }
+}

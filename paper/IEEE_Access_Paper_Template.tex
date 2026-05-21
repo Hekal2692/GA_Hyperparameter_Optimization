@@ -1,0 +1,316 @@
+\documentclass{ieeeaccess}
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{array}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\history{Date of publication xxxx 00, 0000, date of current version xxxx 00, 0000.}
+\doi{10.1109/ACCESS.XXXX.XXXXXXX}
+\title{Author Input Required: Hyperparameter-Optimized Genetic Scheduling of DAG Applications on Multiprocessor Platforms}
+
+\author{\uppercase{Author One}\authorrefmark{1},
+\uppercase{Author Two}\authorrefmark{2}, and
+\uppercase{Author Three}\authorrefmark{1}}
+
+\address[1]{Author Input Required}
+\address[2]{Author Input Required}
+\tfootnote{Author Input Required}
+
+\markboth
+{Author \headeretal: Hyperparameter-Optimized Genetic Scheduling of DAG Applications on Multiprocessor Platforms}
+{Author \headeretal: Hyperparameter-Optimized Genetic Scheduling of DAG Applications on Multiprocessor Platforms}
+
+\corresp{Corresponding author: Author Input Required.}
+
+\begin{abstract}
+Author Input Required. This paper presents a nested genetic algorithm for DAG task scheduling as implemented in the repository. The inner GA searches schedules through task-order, processor-allocation, message-priority, and message-path genes, with makespan as the fitness value. The outer GA tunes scheduler hyperparameters using repeated stochastic evaluations and a weighted normalized objective combining mean makespan and mean runtime. Final numerical results must be inserted only from selected repository log folders.
+\end{abstract}
+
+\begin{keywords}
+DAG scheduling, genetic algorithm, hyperparameter optimization, multiprocessor scheduling, stochastic benchmarking, makespan, runtime.
+\end{keywords}
+
+\titlepgskip=-15pt
+\maketitle
+
+\section{Introduction}
+\label{sec:introduction}
+
+\PARstart{A}{uthor Input Required.} 
+
+The contributions are:
+\begin{itemize}
+    \item An inner GA scheduler with a four-part chromosome: task order, processor allocation, message priority ordering, and message path index.
+    \item An outer GA that tunes scheduler population size, crossover probability, mutation probability, generation count, and mutation sub-probabilities.
+    \item A weighted outer objective based on normalized mean makespan and normalized mean runtime.
+    \item A stochastic evaluation workflow with repeated standalone runs, nested GA validation, convergence logging, repeat-stability analysis, and standalone-vs-tuned comparison.
+\end{itemize}
+
+\section{Related Work}
+\label{sec:related_work}
+
+Author Input Required. The related work section should cover the following topics, with specific references to works that implement or analyze genetic algorithms for DAG scheduling and hyperparameter optimization in evolutionary algorithms. Each topic should be supported by relevant literature, and the discussion should highlight how the current approach compares to or builds upon existing methods.
+
+\begin{itemize}
+\item DAG Scheduling using Heuristics and Metaheuristics.
+Discuss classical DAG scheduling approaches such as list scheduling and HEFT-style methods.
+Discuss PSO, ACO, and other population-based scheduling methods.
+
+\item Genetic Algorithms for Scheduling. 
+
+\item Genetic Algorithm Encodings for Scheduling
+Focus on permutation encoding, processor-mapping encoding, hybrid chromosomes, and mutation/crossover design.
+
+\item Multi-Objective Optimization in Scheduling
+Discuss makespan, energy, and other objectives. Discuss weighted-sum approaches and Pareto optimization
+
+
+\item Hyperparameter Optimization for Evolutionary Algorithms
+Discuss parameter tuning, meta-optimization, and automated configuration of evolutionary algorithms. Also AI methods for hyperparameter optimization.
+Discuss specific works that tune GA parameters for scheduling or related problems.
+
+\item Summarise the gaps in existing literature that the current work addresses 
+
+\end{itemize}
+
+
+
+\begin{table*}[t]
+\caption{Literature Comparison Template}
+\label{tab:related_work_comparison}
+\centering
+\begin{tabular}{p{2.3cm}p{2.2cm}p{2.1cm}p{1.7cm}p{1.5cm}p{2.0cm}p{1.7cm}p{1.8cm}p{2.0cm}}
+\toprule
+Work & Problem Model & Scheduling Method & Comm. Cost & Path Selection & Hyperparameter Tuning & Runtime Objective & Repeat Validation & Statistical Test \\
+\midrule
+Author Input Required & DAG/task graph & GA/heuristic/etc. & Yes/No & Yes/No & Manual/automated/none & Yes/No & Yes/No & Yes/No \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\section{System Model}
+\label{sec:system_model}
+
+\subsection{Application Model}
+
+
+\subsection{Platform Model}
+
+T
+
+\subsection{Communication Paths}
+
+
+
+\section{Mathematical Model and Problem Formulation}
+\label{sec:mathematical_model}
+
+\subsection{Decision Variables}
+
+
+\subsection{Communication Delay}
+
+
+\subsection{Schedule Reconstruction}
+
+
+
+\subsection{Inner Objective}
+
+
+
+\subsection{Outer Objective}
+
+
+
+\section{Proposed Method}
+\label{sec:proposed_method}
+
+\subsection{Inner GA - The Scheduler}
+
+The inner scheduler GA initializes a population of chromosomes containing task order, processor allocation, message priority, and message path-index genes. It uses tournament selection, ordered crossover for permutation segments, uniform crossover for allocation/path segments, and segment-specific mutation operators. Fitness is the reconstructed schedule makespan.
+
+\begin{algorithm}[t]
+\caption{Inner Scheduler GA}
+\label{alg:inner_ga}
+\begin{algorithmic}[1]
+\STATE Input: tasks, messages, processors, candidate paths, GA parameters
+\STATE Initialize population of chromosomes \(g=[\pi,x,\rho,\kappa]\)
+\STATE Evaluate each chromosome by reconstructing its schedule and computing \(C_{\max}\)
+\FOR{each generation}
+    \STATE Select offspring by tournament selection
+    \STATE Apply crossover to task-order, processor-allocation, message-priority, and path-index segments
+    \STATE Apply segment-specific mutation
+    \STATE Reconstruct and evaluate invalid offspring
+    \STATE Replace the population with offspring
+\ENDFOR
+\STATE Return best makespan, best schedule, and best genome
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Outer GA - The Optimiser}
+
+The outer GA searches over inner scheduler hyperparameters. Each outer individual is evaluated by running the inner scheduler multiple times and recording makespans, runtimes, schedules, and genomes. The population uses elitism and random immigrants.
+
+\begin{algorithm}[t]
+\caption{Outer Hyperparameter GA}
+\label{alg:outer_ga}
+\begin{algorithmic}[1]
+\STATE Input: problem instance, search-space bounds, outer GA settings
+\STATE Initialize outer population of hyperparameter vectors \(\theta\)
+\FOR{each outer individual}
+    \STATE Run the inner scheduler for configured repeats
+    \STATE Compute mean makespan and mean runtime
+    \STATE Update normalized weighted objective
+\ENDFOR
+\FOR{each outer generation}
+    \STATE Preserve elites
+    \STATE Select, crossover, and mutate offspring
+    \STATE Inject configured random immigrants
+    \STATE Evaluate invalid individuals through repeated inner GA runs
+    \STATE Recompute archive-normalized weighted scores
+\ENDFOR
+\STATE Validate top distinct candidates on unseen seeds
+\STATE Return selected hyperparameters and logged artifacts
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Comparison Pipeline}
+
+The repository supports matching standalone and nested runs by instance name. The comparison pipeline computes makespan and runtime distributions, relative improvement, Welch t-test, and Cohen's \(d\).
+
+\section{Experimental Setup}
+\label{sec:experimental_setup}
+
+\subsection{Implementation Environment}
+
+The implementation uses Python with DEAP, NetworkX, Matplotlib, NumPy, and SciPy. Author Input Required: operating system, CPU, memory, Python version, package versions, and reproducibility instructions.
+
+\subsection{Configurations}
+
+The nested GA settings are defined in \texttt{ga\_config.json}. Static baseline settings are defined in \texttt{ga\_config.static\_baseline.json}. Small-run presets are available for smoke testing.
+
+\begin{table}[t]
+\caption{Experiment Configuration Template}
+\label{tab:experiment_config}
+\centering
+\begin{tabular}{lll}
+\toprule
+Component & Parameter & Value \\
+\midrule
+Static scheduler & population size & Author Input Required \\
+Static scheduler & generations & Author Input Required \\
+Static scheduler & repeats & Author Input Required \\
+Outer GA & population size & Author Input Required \\
+Outer GA & generations & Author Input Required \\
+Outer GA & inner repeats & Author Input Required \\
+Outer GA & objective weights & Author Input Required \\
+Validation & validation repeats & Author Input Required \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Metrics}
+
+The logged metrics include best, mean, median, standard deviation, variance, coefficient of variation, confidence intervals, runtime statistics, generation histories, validation means and standard deviations, relative makespan improvement, runtime change, Welch t-test values, and Cohen's \(d\).
+
+\section{Results and Discussion}
+\label{sec:results}
+
+Author Input Required: select final run folders and insert verified values.
+
+\subsection{Standalone Scheduler Baseline}
+
+Report repeated fixed-hyperparameter scheduler results from selected \texttt{logs/example\_*standalone\_scheduler\_ga\_*} folders.
+
+\begin{table}[t]
+\caption{Standalone Scheduler Baseline Results Template}
+\label{tab:standalone_results}
+\centering
+\begin{tabular}{lrrrr}
+\toprule
+Instance & Repeats & Mean Makespan & Std. & Mean Runtime (s) \\
+\midrule
+Author Input Required & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Nested GA Hyperparameter Tuning}
+
+Report selected best hyperparameters and outer objective behavior from \texttt{logs/multiobjectiverun\_*}.
+
+\begin{table*}[t]
+\caption{Best Tuned Hyperparameters Template}
+\label{tab:best_hyperparameters}
+\centering
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Instance & \(N_{pop}\) & \(p_c\) & \(p_m\) & \(N_{gen}\) & \(q_{\pi}\) & \(q_x\) & \(q_{\rho}\) & \(q_{\kappa}\) \\
+\midrule
+Author Input Required & -- & -- & -- & -- & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Validation on Unseen Seeds}
+
+Report validation results from \texttt{*\_validation\_results.json}. Distinguish search-time training repeats from unseen-seed validation repeats.
+
+\subsection{Tuned-Versus-Standalone Comparison}
+
+Use comparison batches only after verifying matching instances and source mode.
+
+\begin{equation}
+\Delta_C(\%)=100\frac{\bar{C}_{static}-\bar{C}_{tuned}}{\bar{C}_{static}}.
+\end{equation}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/author_input_required_workflow.pdf}
+\caption{Author Input Required: repository workflow or architecture figure adapted from the Mermaid diagrams.}
+\label{fig:workflow}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/author_input_required_results.pdf}
+\caption{Author Input Required: selected convergence, validation, or comparison plot from the logged artifacts.}
+\label{fig:results}
+\end{figure}
+
+\section{Limitations and Future Work}
+\label{sec:limitations}
+
+The inspected implementation does not implement reliability modeling, fault injection, redundancy, graph partitioning, energy optimization, or formal deadline satisfaction. The input JSON files contain \texttt{deadline} and \texttt{can\_run\_on} metadata, but these are not enforced by the current scheduling objective or processor-allocation logic. Future work may add these constraints, extend baseline comparisons, and rerun all instances under a single reproducible experimental campaign.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+Author Input Required. Conclude by summarizing the repository-supported nested GA scheduling framework, the inner chromosome design, the outer hyperparameter tuner, and the verified experimental findings. Do not introduce unsupported claims.
+
+\section*{Acknowledgment}
+
+Author Input Required.
+
+\begin{thebibliography}{00}
+\bibitem{b1} Author Input Required.
+\end{thebibliography}
+
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{author1.png}}]{Author One}
+Author Input Required.
+\end{IEEEbiography}
+
+\EOD
+
+\end{document}

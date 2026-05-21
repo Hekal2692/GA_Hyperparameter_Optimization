@@ -1,0 +1,68 @@
+flowchart TD
+
+subgraph Configs["Configs"]
+    cfg1["ga_config.json"]
+    cfg2["ga_config.static_baseline.json"]
+end
+
+subgraph Core["Core Scheduler"]
+    inner["GAImplementation.py
+Inner scheduler GA implementation"]
+end
+
+subgraph Scripts["Main Scripts"]
+    opt["OptimizerGa.py
+Outer GA hyperparameter tuner"]
+    sched["SchedulerGa.py
+Standalone fixed-GA benchmark runner"]
+    cmp["CompareGaRuns.py
+Post-run comparison pipeline"]
+end
+
+subgraph NestedArtifacts["Nested GA Artifacts"]
+    nh["history.json"]
+    ne["evaluations.jsonl"]
+    nb["best_result.json"]
+    nv["validation_results.json"]
+    np["nested plots"]
+end
+
+subgraph StandaloneArtifacts["Standalone Artifacts"]
+    sr["runs.jsonl"]
+    ss["results.json"]
+    sg["convergence plot"]
+    sp["repeat summary plot"]
+    sl["log file"]
+end
+
+subgraph CompareArtifacts["Comparison Artifacts"]
+    cj["comparison json"]
+    cp["comparison plots"]
+end
+
+cfg1 --> opt
+cfg1 --> inner
+cfg2 --> sched
+cfg2 --> inner
+
+opt --> inner
+sched --> inner
+
+opt --> nh
+opt --> ne
+opt --> nb
+opt --> nv
+opt --> np
+
+sched --> sr
+sched --> ss
+sched --> sg
+sched --> sp
+sched --> sl
+
+ss --> cmp
+nb --> cmp
+nv --> cmp
+
+cmp --> cj
+cmp --> cp
