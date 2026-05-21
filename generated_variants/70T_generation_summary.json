@@ -1,0 +1,90 @@
+{
+  "input_file": "Original_DAG/example_70T.json",
+  "task_count": 70,
+  "file_prefix": "70T",
+  "num_variants_requested": 2,
+  "num_variants_generated": 2,
+  "config_file": "dag_variant_generator/dag_variant_config.json",
+  "variants": [
+    {
+      "variant_index": 0,
+      "output_file": "70T_variant_000.json",
+      "generation_mode": "application_only",
+      "random_seed": 42,
+      "original_job_count": 70,
+      "generated_job_count": 70,
+      "original_message_count": 82,
+      "generated_message_count": 105,
+      "original_edge_count": 82,
+      "generated_edge_count": 105,
+      "common_edge_count": 2,
+      "edge_difference_ratio": 1.7428571428571429,
+      "dag_validation_passed": true,
+      "platform_validation_passed": true,
+      "platform_connected": true,
+      "can_run_on_validation_passed": true,
+      "processor_ids": [
+        1,
+        2,
+        3,
+        7,
+        11,
+        15,
+        16,
+        17
+      ],
+      "router_ids": [
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        12,
+        13,
+        14
+      ],
+      "warnings": []
+    },
+    {
+      "variant_index": 1,
+      "output_file": "70T_variant_001.json",
+      "generation_mode": "application_only",
+      "random_seed": 1042,
+      "original_job_count": 70,
+      "generated_job_count": 70,
+      "original_message_count": 82,
+      "generated_message_count": 106,
+      "original_edge_count": 82,
+      "generated_edge_count": 106,
+      "common_edge_count": 5,
+      "edge_difference_ratio": 1.679245283018868,
+      "dag_validation_passed": true,
+      "platform_validation_passed": true,
+      "platform_connected": true,
+      "can_run_on_validation_passed": true,
+      "processor_ids": [
+        1,
+        2,
+        3,
+        7,
+        11,
+        15,
+        16,
+        17
+      ],
+      "router_ids": [
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        12,
+        13,
+        14
+      ],
+      "warnings": []
+    }
+  ]
+}

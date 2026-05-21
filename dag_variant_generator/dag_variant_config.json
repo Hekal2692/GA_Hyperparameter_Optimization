@@ -1,0 +1,84 @@
+{
+  "generation_mode": "application_only",
+  "num_variants": 5,
+  "random_seed": 42,
+  "output_dir": "generated_variants",
+  "application": {
+    "preserve_task_count": true,
+    "preserve_task_ids": true,
+    "preserve_message_count": false,
+    "target_message_count": null,
+    "layout_strategy": "layered_random",
+    "num_layers": 7,
+    "min_tasks_per_layer": 1,
+    "in_degree": {
+      "min": 0,
+      "max": 3,
+      "target_avg": 1.5
+    },
+    "out_degree": {
+      "min": 0,
+      "max": 3,
+      "target_avg": 1.5
+    },
+    "force_at_least_one_source": true,
+    "force_at_least_one_sink": true,
+    "avoid_isolated_tasks": true,
+    "message_size_range": [
+      15,
+      25
+    ],
+    "period_choices": [
+      10,
+      30,
+      50
+    ],
+    "timetriggered_default": true,
+    "regenerate_wcet_fullspeed": true,
+    "wcet_fullspeed_range": [
+      3,
+      100
+    ],
+    "regenerate_processing_times": true,
+    "processing_times_range": [
+      2,
+      10
+    ],
+    "regenerate_mcet": false,
+    "mcet_default": 0,
+    "regenerate_deadline": true,
+    "deadline_policy": "random_range",
+    "deadline_range": [
+      100,
+      600
+    ],
+    "can_run_on_policy": "resample_processors_only",
+    "min_can_run_on": 2,
+    "max_can_run_on": 5
+  },
+  "platform": {
+    "modify_platform": false,
+    "preserve_node_count": true,
+    "preserve_processor_count": true,
+    "preserve_router_count": true,
+    "processor_count": null,
+    "router_count": null,
+    "topology_strategy": "layered",
+    "ensure_connected": true,
+    "extra_link_probability": 0.15,
+    "bidirectional_links": false,
+    "router_id_policy": "reuse_or_generate",
+    "processor_id_policy": "reuse_or_generate"
+  },
+  "validation": {
+    "require_same_task_count": true,
+    "require_dag": true,
+    "require_no_self_loops": true,
+    "require_unique_message_edges": true,
+    "require_different_edge_set_from_original": true,
+    "min_edge_difference_ratio": 0.30,
+    "require_platform_connected": true,
+    "require_can_run_on_processors_only": true,
+    "max_generation_attempts": 1000
+  }
+}
