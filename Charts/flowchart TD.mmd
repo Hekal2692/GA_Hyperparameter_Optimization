@@ -1,0 +1,117 @@
+flowchart TD
+
+subgraph Inputs["Inputs and Config"]
+    inst["Problem instance<br/>example_50T.json / example_70T.json / future instances"]
+    cfgNested["ga_config.json<br/>Nested GA config"]
+    cfgStatic["ga_config.static_baseline.json<br/>Standalone baseline config"]
+end
+
+subgraph Modules["Main Code Modules"]
+    opt["OptimizerGa.py<br/>Outer GA tuner"]
+    sched["SchedulerGa.py<br/>Standalone benchmark runner"]
+    inner["GAImplementation.py<br/>Inner scheduler GA"]
+    cmp["CompareGaRuns.py<br/>Comparison pipeline"]
+end
+
+subgraph Nested["Nested GA Experiment"]
+    n1["Load instance and nested config"]
+    n2["Outer individual = one scheduler hyperparameter set<br/>pop_size, cxpb, mutpb, ngen,<br/>task-order probability,<br/>processor-allocation probability,<br/>message-priority shuffle probability,<br/>message-path-index probability"]
+    n3["Inject hyperparameters into inner GA"]
+    n4["Run inner scheduler GA for inner_repeats<br/>with different seeds"]
+    n5["Compute outer fitness = mean makespan"]
+    n6["Evolve outer population across generations"]
+    n7["Select top outer candidates"]
+    n8["Validate selected candidates on unseen seeds"]
+end
+
+subgraph NestedOut["Nested Run Outputs"]
+    nh["*_history.json"]
+    ne["*_evaluations.jsonl"]
+    nb["*_best_result.json"]
+    nv["*_validation_results.json"]
+    np["Nested plots<br/>objective history, runtime tradeoff,<br/>repeat stability, diversity,<br/>hyperparameter trajectories, validation"]
+end
+
+subgraph Static["Standalone GA Benchmark"]
+    s1["Load instance and static config"]
+    s2["Run fixed scheduler GA for benchmark_repeats<br/>with different seeds"]
+    s3["Store per-run generation history"]
+    s4["Aggregate benchmark statistics<br/>mean, std, runtime"]
+end
+
+subgraph StaticOut["Standalone Outputs"]
+    sr["*_runs.jsonl"]
+    ss["*_results.json"]
+    sg["Main convergence plot<br/>makespan over generations<br/>for each run + mean curve"]
+    sp["*_repeat_summary.png<br/>final makespan per run"]
+    sl["*.log"]
+end
+
+subgraph Compare["Per-Instance Comparison"]
+    c1["Match by instance name<br/>50T vs 50T, 70T vs 70T"]
+    c2["Choose nested source<br/>training or validation"]
+    c3["Compare makespan and runtime distributions"]
+    c4["Compute Welch t-test and effect size"]
+    c5["Write comparison JSON and plots"]
+end
+
+cfgNested --> n1
+inst --> n1
+n1 --> opt
+opt --> n2
+n2 --> n3
+n3 -->|"calls"| inner
+inner --> n4
+n4 --> n5
+n5 --> n6
+n6 -->|"new outer candidates"| n2
+n6 --> nh
+n6 --> ne
+n6 --> n7
+n7 --> nb
+n7 --> n8
+n8 --> nv
+nh --> np
+ne --> np
+nv --> np
+
+cfgStatic --> s1
+inst --> s1
+s1 --> sched
+sched -->|"calls"| inner
+inner --> s2
+s2 --> s3
+s3 --> s4
+s2 --> sr
+s2 --> sl
+s3 --> ss
+s4 --> ss
+s3 --> sg
+s4 --> sp
+
+ss --> cmp
+nv --> cmp
+nb --> cmp
+cmp --> c1
+c1 --> c2
+c2 --> c3
+c3 --> c4
+c4 --> c5
+
+note1["Standalone benchmark repeats estimate stochastic performance and stability.<br/>They are not a hyperparameter validation phase."]
+note2["Nested validation is meaningful because the outer GA tunes hyperparameters<br/>and must be checked on unseen seeds."]
+
+s4 -.-> note1
+n8 -.-> note2
+
+classDef config fill:#EAF2FF,stroke:#3B6FB6,stroke-width:1px;
+classDef script fill:#EAFBF0,stroke:#2E8B57,stroke-width:1px;
+classDef process fill:#FFF8E8,stroke:#C28A2E,stroke-width:1px;
+classDef artifact fill:#F5ECFF,stroke:#8A4AC2,stroke-width:1px;
+classDef note fill:#FFF1F1,stroke:#C05050,stroke-dasharray: 5 5;
+
+class inst,cfgNested,cfgStatic config;
+class opt,sched,inner,cmp script;
+class n1,n2,n3,n4,n5,n6,n7,n8,s1,s2,s3,s4,c1,c2,c3,c4,c5 process;
+class nh,ne,nb,nv,np,sr,ss,sg,sp,sl artifact;
+class note1,note2 note;

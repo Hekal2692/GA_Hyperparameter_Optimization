@@ -1,0 +1,24 @@
+{
+  "paths": {
+    "default_input_json": "example_30T.json",
+    "log_dir": "logs"
+  },
+  "outer_ga": {
+    "population_size": 4,
+    "generations": 1,
+    "tournament_size": 3,
+    "elite_count": 1,
+    "random_immigrant_rate": 0.25,
+    "random_seed": 7
+  },
+  "analysis": {
+    "top_k_validation_candidates": 2,
+    "validation_repeats": 3,
+    "validation_seed_offset": 100000
+  },
+  "scheduler": {
+    "selection": {
+      "tournament_size": 3
+    }
+  }
+}

@@ -1,0 +1,60 @@
+flowchart TD
+
+start["Choose problem instance
+example_50T / example_70T / future instance"]
+
+subgraph Nested["Nested GA Workflow"]
+    n1["Load ga_config.json and instance"]
+    n2["Initialize outer GA population"]
+    n3["One outer individual = one scheduler hyperparameter configuration"]
+    n4["Pass configuration to inner scheduler GA"]
+    n5["Run inner GA for inner_repeats with different seeds"]
+    n6["Compute outer objective = mean makespan"]
+    n7["Evolve outer GA across generations"]
+    n8["Select best outer candidates"]
+    n9["Validate selected candidates on unseen seeds"]
+    n10["Save nested outputs and plots"]
+end
+
+subgraph Standalone["Standalone Baseline Workflow"]
+    s1["Load ga_config.static_baseline.json and instance"]
+    s2["Use fixed scheduler hyperparameters"]
+    s3["Run scheduler GA for benchmark_repeats with different seeds"]
+    s4["Store per-run makespan, runtime, and generation history"]
+    s5["Compute mean, std, and other benchmark statistics"]
+    s6["Save standalone outputs and plots"]
+end
+
+subgraph Compare["Comparison Workflow"]
+    c1["Match runs by instance name"]
+    c2["50T standalone vs 50T nested"]
+    c3["70T standalone vs 70T nested"]
+    c4["Choose nested source: training or validation"]
+    c5["Compare makespan and runtime distributions"]
+    c6["Compute Welch t-test and effect size"]
+    c7["Write comparison outputs"]
+end
+
+start --> n1
+start --> s1
+
+n1 --> n2 --> n3 --> n4 --> n5 --> n6 --> n7
+n7 --> n3
+n7 --> n8 --> n9 --> n10
+
+s1 --> s2 --> s3 --> s4 --> s5 --> s6
+
+n10 --> c1
+s6 --> c1
+c1 --> c2
+c1 --> c3
+c2 --> c4
+c3 --> c4
+c4 --> c5 --> c6 --> c7
+
+note1["Nested GA optimizes mean makespan across repeated inner runs"]
+note2["Standalone GA does not tune hyperparameters;
+it only benchmarks fixed-GA performance and stability"]
+
+n6 -.-> note1
+s5 -.-> note2
